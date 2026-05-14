@@ -1,16 +1,16 @@
 # lyricspot
 
-`lyricspot` is a lightweight terminal lyric viewer that syncs with the active MPRIS player and fetches lyrics from `lrclib.net`.
+basically, `lyricspot` is just a TUI lyric app that uses lrclib to fetch your currnetly played song's lyrics from lrclib
 
-## Install
+## install
 
-### Arch / AUR
+### AUR
 
 ```bash
 yay -S lyricspot
 ```
 
-### Dependencies
+### dependency
 
 ```bash
 # arch / arch-based
@@ -23,22 +23,22 @@ nix-env -iA nixpkgs.playerctl
 sudo apt install playerctl
 ```
 
-### Manual
+### manual install (any distro works for this)
 
 ```bash
 git clone https://github.com/vlensys/lyricspot
 cd lyricspot
-ln -sf "$(pwd)/lyricspot.py" ~/.local/bin/lyricspot
 chmod +x lyricspot.py
+mv lyricspot.py ~/.local/bin/
 ```
 
-## Run
+## running it
 
 ```bash
 lyricspot
 ```
 
-## CLI
+## commands
 
 ```bash
 lyricspot --reset
@@ -47,7 +47,7 @@ lyricspot --cache on
 lyricspot --cache off
 ```
 
-## Controls
+## controls
 
 | key | action |
 |---|---|
@@ -60,19 +60,19 @@ lyricspot --cache off
 
 ## Cache
 
-Lyrics cache:
+we store lyrics we fetch from lrclib in order to save time on loading them and have more offline support
 
 ```text
 ~/.config/lyricspot/cache.json
 ```
 
-Settings file:
+settings r stored here:
 
 ```text
 ~/.config/lyricspot/settings.json
 ```
 
-Color settings accept ANSI color indexes, basic color names, RGB arrays, or hex strings:
+color settings work w/ ANSI color indexes, basic color names, RGB arrays, or hex strings
 
 ```json
 {
@@ -90,10 +90,3 @@ Color settings accept ANSI color indexes, basic color names, RGB arrays, or hex 
 }
 ```
 
-Use `--clear` to wipe the lyrics cache without touching settings. Use `--cache off` to disable cache reads and writes for that run.
-
-## Notes
-
-- Works with any MPRIS-compatible player, including `mpv`, `vlc`, `cmus`, and `rhythmbox`.
-- The API base can be overridden with `LRCLIB_API`.
-- If lyrics feel off, adjust the offset with `↑` and `↓`.
