@@ -1,5 +1,7 @@
 # lyricspot
 
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/0ca8fe90-e68d-4382-9b50-213925f25044" />
+
 basically, `lyricspot` is just a TUI lyric app that uses lrclib to fetch your currnetly played song's lyrics from lrclib
 
 ## install
